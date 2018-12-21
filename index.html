@@ -1,0 +1,12 @@
+<h1>It works!</h1>
+<script>
+  async function loadWasm(url, opt = {}) {
+    const wasmRaw = await fetch(url).then(res => res.arrayBuffer());
+    const wasmObj = await WebAssembly.instantiate(wasmRaw, opt);
+    return wasmObj.instance.exports;
+  }
+
+  loadWasm('build/optimized.wasm', {}).then(wasm => {
+    console.log(wasm.add(12, 24)); // 36
+  });
+</script>
