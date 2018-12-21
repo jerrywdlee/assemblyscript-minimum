@@ -1,0 +1,30 @@
+{
+  "name": "assemblyscript-minimum",
+  "version": "0.0.1",
+  "description": "Handmade AssemblyScript Minimum Configuration Demo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gist.github.com/a119f3ab445641422502e3905cad7afd.git"
+  },
+  "keywords": [
+    "Handmade",
+    "AssemblyScript",
+    "Minimum"
+  ],
+  "author": "jerrywdlee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gist.github.com/a119f3ab445641422502e3905cad7afd"
+  },
+  "homepage": "https://gist.github.com/a119f3ab445641422502e3905cad7afd",
+  "devDependencies": {
+    "assemblyscript": "github:AssemblyScript/assemblyscript"
+  }
+}
